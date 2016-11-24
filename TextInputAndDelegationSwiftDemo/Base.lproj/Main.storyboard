@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextInputAndDelegationSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lE-9i-rq5">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IcC-HY-Zfm">
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="2x  Value  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="genarate2xValue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tUU-Xa-Nku"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is It your Result?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obn-A8-aFJ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fky-aZ-vCz">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1lE-9i-rq5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5jW-fX-NgS"/>
+                            <constraint firstItem="1lE-9i-rq5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="AM9-Ol-xBS"/>
+                            <constraint firstItem="IcC-HY-Zfm" firstAttribute="top" secondItem="1lE-9i-rq5" secondAttribute="bottom" constant="8" symbolic="YES" id="BqF-OU-f8q"/>
+                            <constraint firstItem="IcC-HY-Zfm" firstAttribute="leading" secondItem="Obn-A8-aFJ" secondAttribute="leading" id="HUo-sz-rdg"/>
+                            <constraint firstItem="1lE-9i-rq5" firstAttribute="leading" secondItem="IcC-HY-Zfm" secondAttribute="leading" id="HdQ-nz-0Go"/>
+                            <constraint firstItem="IcC-HY-Zfm" firstAttribute="trailing" secondItem="Obn-A8-aFJ" secondAttribute="trailing" id="M2h-vq-aVI"/>
+                            <constraint firstItem="Obn-A8-aFJ" firstAttribute="leading" secondItem="fky-aZ-vCz" secondAttribute="leading" id="NDu-k8-AMq"/>
+                            <constraint firstItem="1lE-9i-rq5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="PPw-vj-53l"/>
+                            <constraint firstItem="fky-aZ-vCz" firstAttribute="top" secondItem="Obn-A8-aFJ" secondAttribute="bottom" constant="8" symbolic="YES" id="QtU-Qd-rk8"/>
+                            <constraint firstItem="1lE-9i-rq5" firstAttribute="trailing" secondItem="IcC-HY-Zfm" secondAttribute="trailing" id="YCW-Tk-FEp"/>
+                            <constraint firstItem="Obn-A8-aFJ" firstAttribute="trailing" secondItem="fky-aZ-vCz" secondAttribute="trailing" id="YSA-MU-GDZ"/>
+                            <constraint firstItem="Obn-A8-aFJ" firstAttribute="top" secondItem="IcC-HY-Zfm" secondAttribute="bottom" constant="8" symbolic="YES" id="ruY-sj-YOe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lable2xValue" destination="fky-aZ-vCz" id="4PS-UU-JNF"/>
+                        <outlet property="textField1xValue" destination="1lE-9i-rq5" id="EYx-FW-hvE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+</document>
