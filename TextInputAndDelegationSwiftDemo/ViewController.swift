@@ -16,6 +16,9 @@ class ViewController: UIViewController , UITextFieldDelegate {
     //The UILabel class implements a read-only text view. You can use this class to draw one or multiple lines of static text
     @IBOutlet weak var lable2xValue: UILabel!
     
+    
+    //stoe property
+   // var value1x : Double?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,17 +63,59 @@ class ViewController: UIViewController , UITextFieldDelegate {
         return true
     }
     
+    //computed property
+    var value2x : Double? {
+        if let  value = value1x{
+            return (value * 2)
+        }
+        else{
+            return nil
+        }
+    }
+    
+    var value1x : Double? {
+        didSet{
+            updateLabel2xValue()
+        }
+    }
+    
+    func updateLabel2xValue(){
+        
+        if let value = value2x {
+            //lable2xValue.text = "\(value)"
+            
+            
+            //MARK:- ERORR Cannot convert value of type 'Double' to expected argument type 'NSNumber'
+            //lable2xValue.text = numberFormatter.string(from: value)
+            
+            //MARK:- ERROR Argument labels '(_:)' do not match any available overloads
+            //lable2xValue.text = numberFormatter.string(from: NSNumber(value))
+            lable2xValue.text = numberFormatter.string(from: NSNumber(value:value))
+        }
+        else {
+            lable2xValue.text = "???"
+        }
+        
+    }
+    
+    var  numberFormatter : NumberFormatter = {
+        let ls = NumberFormatter()
+        ls.numberStyle = .decimal
+        ls.minimumFractionDigits = 0
+        ls.maximumFractionDigits = 2
+        return ls
+    }()
     
     
-    
-    
-    
-    
-
-    
-    
-    
-    
+    @IBAction func textField1xValueEditingChange(_ sender: AnyObject) {
+        //print(self.textField1xValue.text)
+        if let value = self.textField1xValue.text , let doubleValue = Double(value){
+            value1x = doubleValue
+            
+        }else{
+            value1x = nil
+        }
+    }
 
 
 }
